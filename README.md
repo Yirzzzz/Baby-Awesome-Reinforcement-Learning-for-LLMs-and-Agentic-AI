@@ -7,7 +7,8 @@
 > The repo curates papers, blogs, and implementations I read along the way.  
 > Mistakes may occur — corrections and PRs are always welcome! 🙌
 
-![ChatGPT Image 2025年9月11日 15_50_21](../../download/ChatGPT Image 2025年9月11日 15_50_21.png)
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/5b44c6c5-28a3-40c9-9fcc-9225b071a5e3" />
+
 
 [TOC]
 
@@ -88,7 +89,9 @@
 
 - **GRPO (DeepSeek, 2025)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/pdf/2402.03300)
 
-
+> [!NOTE]
+>
+> DSADFAS
 
 - REINFORCE++ (2024) – Stable critic-free REINFORCE variant.
 
