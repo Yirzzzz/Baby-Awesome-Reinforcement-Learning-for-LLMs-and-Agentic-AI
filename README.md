@@ -2,7 +2,7 @@
 
 # Baby Awesome Reinforcement Learning for LLMs and Agentic AI
 
-![ChatGPT Image 2025年9月11日 15_50_21](../../download/ChatGPT Image 2025年9月11日 15_50_21.png)
+![abtract_](./assets/abtract.png)
 
 > This is not a canonical "Awesome" list.  It’s **my learning log** of reinforcement learning for LLMs and agentic AI.  The repo curates papers, blogs, and implementations I read along the way.  Mistakes may occur — corrections and PRs are always welcome! 🙌 If you want to contribute to this list, welcome to send me a pull request or contact me :)
 
