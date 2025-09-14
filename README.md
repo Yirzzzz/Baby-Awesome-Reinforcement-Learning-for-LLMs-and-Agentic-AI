@@ -51,16 +51,27 @@
   > Compared to RLHF, `CAI` relies on a *small set of natural-language principles together with a few illustrative examples* to guide critique–revision for safer answers and to generate AI-based harmlessness preference labels for fine-tuning.
 
 - **Prometheus: Inducing Fine-grained Evaluation Capability in Language Models (Prometheus; 2023)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2310.08491)
+
 - **UltraFeedback: Boosting Language Models with Scaled AI Feedback (UltraFeedback; 2023)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2310.01377)
+
 - **G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment (G-Eval; 2023)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2303.16634)
+
 - **Direct Large Language Model Alignment Through Self-Rewarding Contrastive Prompt Distillation (Self-Rewarding; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2401.10020)
-- **RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment (RLCD 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)(https://arxiv.org/abs/2307.12950)
+
+- **RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment (RLCD 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2307.12950)
+
 - **RL-VLM-F: Reinforcement Learning from Vision Language Foundation Model Feedback (RL-VLM-F; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](RL-VLM-F: Reinforcement Learning from Vision Language Foundation Model Feedback)
+
 - **A Critical Evaluation of AI Feedback for Aligning Large Language Models (NeurIPS; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2402.12366)
+
 - **RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with AI Feedback (ICML; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2309.00267)
-- **Language Model Self-improvement by Reinforcement Learning Contemplation (ICLR; 2024)** [![Paper](https://img.shields.io/badge/Paper-OpenReview-blue)(https://openreview.net/forum?id=38E4yUbrgr)
-- **Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations (Math-Shepherd; ACL; 2024)** [![Paper](https://img.shields.io/badge/Paper-OpenReview-blue)]([[2309.00267\] RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with AI Feedback](https://aclanthology.org/2024.acl-long.510/)
+
+- **Language Model Self-improvement by Reinforcement Learning Contemplation (ICLR; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://openreview.net/forum?id=38E4yUbrgr)
+
+- **Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations (Math-Shepherd; ACL; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2312.08935)
+
 - **Offline RLAIF: Piloting VLM Feedback for RL via SFO (Offline RLAIF; RLC; 2025)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2503.01062v5)
+
 - **Blogs & Resources**:
   
   - [OpenAI Blog: AI Feedback for Alignment](https://openai.com/research/learning-from-ai-feedback)
@@ -158,9 +169,9 @@
 
 - **KTO: Model Alignment as Prospect Theoretic Optimization (KTO; 2024)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2402.01306)
 
-- **Length-Controlled Margin-Based Preference Optimization without Reference Model (LMTO; 2025)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)]([[2502.14643\] Length-Controlled Margin-Based Preference Optimization without Reference Model](https://arxiv.org/abs/2502.14643))
+- **Length-Controlled Margin-Based Preference Optimization without Reference Model (LMTO; 2025)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2502.14643)
 
-- **Adaptive Multi-objective Preference Optimization without Reward Models and Reference Models (AMoPO; 2025)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)]([[2506.07165\] AMoPO: Adaptive Multi-objective Preference Optimization without Reward Models and Reference Models](https://arxiv.org/abs/2506.07165))
+- **Adaptive Multi-objective Preference Optimization without Reward Models and Reference Models (AMoPO; 2025)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2506.07165)
 
 
 
