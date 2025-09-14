@@ -46,7 +46,7 @@
 
 > `RLAIF` are data-labeling paradigms, replacing human preference labels with **AI-generated judgments**. The resulting signals can drive either preference-optimization objectives (e.g., DPO/IPO/ORPO) or RLHF with PPO/online RL.
 
-- **Constitutional AI: Harmlessness from AI Feedback (CAI; 2022)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2212.08073)[![Code](https://img.shields.io/badge/Code-pytorch--CAI-black)]([GitHub - anthropics/ConstitutionalHarmlessnessPaper](https://github.com/anthropics/ConstitutionalHarmlessnessPaper))
+- **Constitutional AI: Harmlessness from AI Feedback (CAI; 2022)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2212.08073)[![Code](https://img.shields.io/badge/Code-pytorch--CAI-black)](https://github.com/anthropics/ConstitutionalHarmlessnessPaper)
 
   > Compared to RLHF, `CAI` relies on a *small set of natural-language principles together with a few illustrative examples* to guide critique–revision for safer answers and to generate AI-based harmlessness preference labels for fine-tuning.
 
