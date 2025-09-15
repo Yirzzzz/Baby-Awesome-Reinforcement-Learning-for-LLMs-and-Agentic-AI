@@ -15,21 +15,31 @@
 
 ### 1️⃣ Reinforce Learning
 
+- **Simple statistical gradient-following algorithms for connectionist reinforcement learning (REINFORCE; 1992)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://link.springer.com/article/10.1007/BF00992696)
+
+  > REINFORCE is the classic Monte Carlo policy gradient algorithm that updates a policy using sampled returns; it laid the foundation for later reinforcement learning methods such as actor–critic, PPO, and modern RLHF optimizers.
+
 - **Trust Region Policy Optimization (TRPO; 2015)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/1502.05477)[![Code](https://img.shields.io/badge/Code-pytorch--trpo-black)](https://github.com/ikostrikov/pytorch-trpo)
+
+  > ⭐ `PPO` introduces a trust-region constraint on policy updates to stabilize policy gradient training, significantly improving robustness over vanilla policy gradients and inspiring later methods such as PPO
 
 - **High-Dimensional Continuous Control Using Generalized Advantage Estimation (GAE; 2015)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/1506.02438)
 
-  > `GAE` is a method for computing advantage estimates $A_t$, which is **widely used** in PPO and PPO-based RLHF.
+  > `GAE` is a method for computing advantage estimates $A_t$, which is **widely used** in PPO and PPO-based RLHF
 
 - **Proximal Policy Optimization Algorithms (PPO; 2017)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/1707.06347)
 
-  > ⭐ `PPO` uses a clipped surrogate objective to bound the policy update, which allows mutiple SGD epochs on the same batch.  It keeps TRPO’s spirit (control policy shift) while being simpler and cheaper for large models. <u>***PPO is the de-facto optimizer for the RL step in modern RLHF (e.g., InstructGPT)***</u>
+  > ⭐ `PPO` introduces a clipped surrogate objective that stabilizes policy updates while remaining simpler and more efficient than TRPO, and it has become the *de-facto optimizer* for the RL step in modern RLHF (e.g., InstructGPT)
 
 ### 2️⃣ RLHF
 
 - **Deep RL from Human Preferences (2017)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/1706.03741)
 
+  > `Deep RL from Human Preferences` demonstrates that human preference comparisons can be used to train a reward model, which then guides deep reinforcement learning, laying the foundation for modern RLHF approaches.
+
 - **Learning to summarize from human feedback (2020)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2009.01325)
+
+  > This paper shows that reinforcement learning from human preference labels can significantly improve abstractive summarization quality, marking the first large-scale application of RLHF to a real NLP task.
 
 - **Training language models to follow instructions with human feedback (InstructGPT; 2023)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2203.02155)
 
@@ -48,42 +58,85 @@
 
 - **Constitutional AI: Harmlessness from AI Feedback (CAI; 2022)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2212.08073)[![Code](https://img.shields.io/badge/Code-pytorch--CAI-black)](https://github.com/anthropics/ConstitutionalHarmlessnessPaper)
 
-  > Compared to RLHF, `CAI` relies on a *small set of natural-language principles together with a few illustrative examples* to guide critique–revision for safer answers and to generate AI-based harmlessness preference labels for fine-tuning.
-
-- **Prometheus: Inducing Fine-grained Evaluation Capability in Language Models (Prometheus; 2023)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2310.08491)
-
-- **UltraFeedback: Boosting Language Models with Scaled AI Feedback (UltraFeedback; 2023)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2310.01377)
+  > ⭐ Compared to RLHF, `CAI` relies on a *small set of natural-language principles together with a few illustrative examples* to guide critique–revision for safer answers and to generate AI-based harmlessness preference labels for fine-tuning.
 
 - **G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment (G-Eval; 2023)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2303.16634)
 
-- **Direct Large Language Model Alignment Through Self-Rewarding Contrastive Prompt Distillation (Self-Rewarding; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2401.10020)
+  > ⭐ `G-Eval` is the first works to formally propose **using large language models (specifically GPT-4) as evaluators for NLG tasks**, demonstrating higher alignment with human judgments than traditional metrics.
 
-- **RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment (RLCD 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2307.12950)
+- **Prometheus: Inducing Fine-grained Evaluation Capability in Language Models (Prometheus; 2023)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2310.08491)
 
-- **RL-VLM-F: Reinforcement Learning from Vision Language Foundation Model Feedback (RL-VLM-F; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](RL-VLM-F: Reinforcement Learning from Vision Language Foundation Model Feedback)
+  >  `Prometheus`  proposes a method that teaches large language models to make “more fine-grained evaluations.” By training on data that combines human preferences with detailed scoring, the model can **not only decide “which answer is better,” but also assess response quality more reliably across multiple dimensions** (***<u>Human-involved labeling</u>***)
 
-- **A Critical Evaluation of AI Feedback for Aligning Large Language Models (NeurIPS; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2402.12366)
+- **UltraFeedback: Boosting Language Models with Scaled AI Feedback (UltraFeedback; 2023)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2310.01377)
+
+  > ⭐`UltraFeedback` builds a massive dataset of AI-generated feedback, where stronger models provide detailed ratings across multiple axes such as helpfulness, safety, and truthfulness (***<u>AI-generated labeling</u>***)
+
+- **Direct Large Language Model Alignment Through Self-Rewarding Contrastive Prompt Distillation (Self-Rewarding; ACL; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2401.10020)
+
+- **RLCD: Reinforcement Learning from Contrastive Distillation for Language Model Alignment (RLCD; ICLR; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2307.12950)
+
+  > `RLCD` is a method that lets a language model **learn from contrastive distillation**, where the model creates reward signals by comparing good and bad answers, so it can be aligned **without needing lots of human labels**.
+
+- **RL-VLM-F: Reinforcement Learning from Vision Language Foundation Model Feedback (RL-VLM-F; ICML; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](RL-VLM-F: Reinforcement Learning from Vision Language Foundation Model Feedback)
+
+  > `RL-VLM-F` introduces a way to align multimodal models by using feedback from a **vision–language foundation model as the reward signal,** reducing the need for human annotation in vision–language tasks.
 
 - **RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with AI Feedback (ICML; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2309.00267)
 
-- **Language Model Self-improvement by Reinforcement Learning Contemplation (ICLR; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://openreview.net/forum?id=38E4yUbrgr)
+  > ⭐ This paper directly compares **RLAIF** (reinforcement learning from AI feedback) with traditional **RLHF**, showing that AI feedback from strong models can replace much of costly human labeling, while still producing similarly aligned or even more scalable LLMs
 
-- **Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations (Math-Shepherd; ACL; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2312.08935)
+- **A Critical Evaluation of AI Feedback for Aligning Large Language Models (NeurIPS; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2402.12366)
+
+  > This paper systematically tests AI-as-judge feedback (vs. human labels), showing where it works and where it fails—biases, miscalibration, judge-model disagreement, and over-optimization—and offers practical guidelines (mix human checks, calibrate, diversify judges) for safer, more reliable alignment
+
+- **Language Model Self-improvement by Reinforcement Learning Contemplation (ICLR(2026); 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://openreview.net/forum?id=38E4yUbrgr)
+
+  > This paper proposes a **self-improvement framework** where a language model reflects on its own answers through *reinforcement learning contemplation*—it generates critiques, revises itself, and uses these reflections as feedback to get better without relying heavily on external labels.
 
 - **Offline RLAIF: Piloting VLM Feedback for RL via SFO (Offline RLAIF; RLC; 2025)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2503.01062v5)
 
-- **Blogs & Resources**:
-  
-  - [OpenAI Blog: AI Feedback for Alignment](https://openai.com/research/learning-from-ai-feedback)
+✔️ If you are interested in other tasks or would like to explore more papers, please refer to the corresponding resources: https://github.com/mengdi-li/awesome-RLAIF
 
 
 
-## 🧮 Process Supervision
+## 📐 Process Supervision
 
-> `Process Supervision` provides **step-level signals** (correct/incorrect rationales, tool traces) instead of outcome-only labels for intermediate reasoning
+> `Process Supervision`  provides **step-level signals** (e.g., marking intermediate rationales or tool traces as correct/incorrect) instead of only outcome labels. This allows models to learn *how* to reason correctly step by step, and is especially useful for tasks like **mathematical reasoning**, code execution, and multi-step tool use. In this section, I focus mainly on mathematical reasoning.
+
+- **Solving math word problems with process- and outcome-based feedback (2022)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2211.14275)
+
+  > ⭐ This paper is the **first** to compare **process-based feedback** (checking each reasoning step) with **outcome-based feedback** (checking only the final answer) in math word problems, showing that process supervision can guide models toward more reliable reasoning.
 
 - **Let's Verify Step by Step (PRMs; 2023)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2305.20050)
-- **Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations (Math-Shepherd; 2023)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2312.08935)
+
+  > ⭐ This paper introduces **step-by-step verifiers** that check <u>***autoly***</u> each intermediate step in a chain of thought (e.g., math), using these checks to guide selection/training so solutions are more reliable than outcome-only checking—a key foundation for process supervision / PRMs.
+
+- **Let's reward step by step: Step-Level reward model as the Navigators for Reasoning (2023)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2310.10080)
+
+  > ⭐ `Let’s Verify Step by Step` focuses on step-by-step verification—**binary correctness (0/1)** checks on intermediate steps for selection and self-improvement. This paper introduces **Process/Step-Level Reward Models (PRMs)** that score each intermediate step in a chain of thought and use these scores to guide generation and training
+  
+- **Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations (Math-Shepherd; ACL; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2312.08935)
+
+  > ⭐ `Math-Shepherd` validates the power of Process Reward Models (PRMs) in mathematical reasoning and **is the first process-level RL framework** that requires no human annotation,which teaches a model to do math step by step **without human labels**. It works by using an automatic checker to verify each step, and rewards the model only when the steps are correct, so the model learns to solve problems more reliably.
+
+* **Improve Mathematical Reasoning in Language Models by Automated Process Supervision (OmegaPRM; ICLR; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](http://arxiv.org/abs/2406.06592)
+
+  > ⭐ This paper proposes **OmegaPRM**, an automated “grading machine” for process supervision. Instead of relying on humans to mark each step, it uses **MCTS** to <u>***automatically***</u> find the **first wrong step** in a reasoning chain and generate step-level labels at scale (over **1.5M annotations**). With these PRMs and weighted self-consistency, math performance improves dramatically (e.g., GSM8K, MATH500), all **without human labeling**
+
+* **FreePRM: Training Process Reward Models Without Ground Truth Process Labels (FreePRM; 2025)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2506.03570)
+
+  > This paper introduces *FreePRM*, a way to train Process Reward Models (PRMs) **without** needing any real step-by-step labels (ground truth) in reasoning chains. It does that by using only whether the **final outcome** **is correct or not to generate “pseudo labels”** for each step, then adds a “buffer probability” to account for uncertainty
+
+* **SPARE: Single-Pass Annotation with Reference-Guided Evaluation for Automatic Process Supervision and Reward Modelling  (SPARE; 2025)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2506.15498)
+
+  > SPARE is like a **fast grader** for step-by-step solutions. Instead of running heavy search (like OmegaPRM’s MCTS), it just takes your answer, lines it up with a **reference solution**, and in **one pass** marks each step as right or wrong. This makes annotation much cheaper and faster, while still giving good data to train PRMs or fine-tune models.
+
+* **CoLD: Counterfactually-Guided Length Debiasing for Process Reward Models (CoLD; 2025)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/pdf/2507.15698)
+
+  > This paper tackles a common flaw in PRMs—longer steps get higher scores even if they add no value. CoLD introduces a debiasing method with length penalties and counterfactual checks so that reward models focus on real correctness, not verbosity.
+
+✔️ If you are interested in other tasks or would like to explore more papers, please refer to the corresponding resources: https://github.com/RyanLiu112/Awesome-Process-Reward-Models
 
 
 
@@ -129,9 +182,11 @@
 
 ### 1️⃣ Online RL for LLMs (Critic-Free)
 
-> Online reinforcement learning  `online RL`, it means the policy is trained while continuously interacting with an environment to collect fresh trajectories generated by the current policy. In constract, `off-policy`  reuses a replay buffer for sample efficiency based on the old policy. Thus, LLM-RL is predominantly on-policy.
+> Online reinforcement learning (online RL) means the policy is updated while continuously interacting with the environment, using fresh trajectories generated during training. In contrast, Offline RL learns entirely from a fixed dataset of past interactions, without collecting new data. Since LLM-RL (e.g., RLHF) relies on generating new responses and receiving feedback in real time, it is predominantly trained in an online fashion.
 
-- **RLOO (2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2402.14740)
+- **Back to Basics: Revisiting REINFORCE Style Optimization for Learning from Human Feedback in LLMs (RLOO; 2024)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2402.14740)
+
+  > This paper systematically re-examines REINFORCE-style optimization in RLHF, showing through experiments that well-tuned REINFORCE with variance reduction and KL regularization can match or even outperform PPO, **challenging the assumption that PPO is essential.** (PPO is not all you need)
 
 - **DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (GRPO; 2025)**  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/pdf/2402.03300)
 
@@ -139,9 +194,11 @@
 
 - **REINFORCE++: An Efficient RLHF Algorithm with Robustness to Both Prompt and Reward Models( REINFORCE++;2025)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2501.03262)
 
+  > REINFORCE++ keeps the standard RLHF framework (SFT → Reward Model → Policy Optimization) **but replaces PPO with an improved REINFORCE algorithm**. By removing PPO’s clipping complexity and adding a variance-reduction baseline, it provides a simpler and more efficient alternative while remaining robust to prompt variations and noisy reward models
+
 - **On-Policy RL Meets Off-Policy Experts: Harmonizing Supervised Fine-Tuning and Reinforcement Learning via Dynamic Weighting (CHORD; 2025)** [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2508.11408)
 
-  > `CHORD` found sometimes pure RL outperform SFT-then-RL. Thus, it replaces the classic SFT-then-RL pipeline with a unified regime that folds SFT into RL as a dynamically weighted auxiliary loss
+  > `CHORD` found sometimes **pure RL outperform SFT-then-RL**. Thus, it replaces the classic SFT-then-RL pipeline with a unified regime that folds SFT into RL as a dynamically weighted auxiliary loss
 
 
 
@@ -157,7 +214,7 @@
 
 ## Preference Optimization (Just for awareness)
 
-> These methods convert preference learning into a contrastive/classification objective . Supervised training on static preference data (contrastive/classification objectives), without interacting with an environment.
+> These methods convert preference learning into a contrastive/classification objective, i.e. supervised training on static preference data without interacting with an environment. However, most reinforcement learning techniques used in today’s large language models are still based on training a reward model (RM) and optimizing the policy with it as the reward signal. Therefore, Preference Optimization methods are only covered here for general understanding rather than as a main focus.
 
 - **Direct Preference Optimization: Your Language Model is Secretly a Reward Model (DPO; 2023)  [![Paper](https://img.shields.io/badge/Paper-arXiv-blue)](https://arxiv.org/abs/2305.18290)[![Code](https://img.shields.io/badge/Code-pytorch--DPO-black)](https://github.com/ikostrikov/pytorch-trpo)**
 
